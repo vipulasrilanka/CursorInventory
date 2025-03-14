@@ -60,7 +60,7 @@ export const AddInventory: React.FC = () => {
         owner: '',
         currentUser: '',
       });
-      navigate('/search');
+      navigate('/');
     } catch (error) {
       console.error('Error saving inventory item:', error);
     }
@@ -156,7 +156,7 @@ export const AddInventory: React.FC = () => {
               <Button
                 variant="outlined"
                 color="secondary"
-                onClick={() => navigate('/search')}
+                onClick={() => navigate('/')}
                 sx={{ ml: 2 }}
               >
                 Cancel
