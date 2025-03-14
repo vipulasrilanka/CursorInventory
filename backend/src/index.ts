@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { Inventory } from './models/Inventory';
+import { Request, Response } from 'express';
 
 dotenv.config();
 
@@ -52,6 +53,24 @@ app.get('/api/inventory/search', async (req, res) => {
     res.json(items);
   } catch (error: any) {
     res.status(500).json({ message: error?.message || 'Error searching inventory' });
+  }
+});
+
+// Add PUT endpoint for updating inventory items
+app.put('/api/inventory/:id', async (req: Request, res: Response) => {
+  try {
+    const updatedItem = await Inventory.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+    if (!updatedItem) {
+      return res.status(404).json({ message: 'Item not found' });
+    }
+    res.json(updatedItem);
+  } catch (error) {
+    const err = error as Error;
+    res.status(500).json({ message: err.message });
   }
 });
 

@@ -1,22 +1,21 @@
-import { Inventory } from './components/Inventory'
-import { CssBaseline, ThemeProvider, createTheme } from '@mui/material'
-
-const theme = createTheme({
-  palette: {
-    mode: 'light',
-    primary: {
-      main: '#1976d2',
-    },
-  },
-});
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { AddInventory } from './components/AddInventory';
+import { SearchInventory } from './components/SearchInventory';
+import Layout from './components/Layout';
+import './App.css';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Inventory />
-    </ThemeProvider>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Navigate to="/search" replace />} />
+          <Route path="add" element={<AddInventory />} />
+          <Route path="search" element={<SearchInventory />} />
+        </Route>
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
