@@ -31,8 +31,9 @@ app.post('/api/inventory', async (req, res) => {
     const newItem = new Inventory(req.body);
     await newItem.save();
     res.status(201).json(newItem);
-  } catch (error: any) {
-    res.status(400).json({ message: error?.message || 'Error creating inventory item' });
+  } catch (error) {
+    const err = error as Error;
+    res.status(400).json({ message: err.message || 'Error creating inventory item' });
   }
 });
 
@@ -44,11 +45,20 @@ app.get('/api/inventory/search', async (req, res) => {
       return res.json(items);
     }
 
-    const items = await Inventory.find(
-      { $text: { $search: query as string } },
-      { score: { $meta: "textScore" } }
-    )
-    .sort({ score: { $meta: "textScore" } });
+    // Create a case-insensitive regex pattern for partial word matching
+    const searchRegex = new RegExp(query as string, 'i');
+    
+    const items = await Inventory.find({
+      $or: [
+        { description: searchRegex },
+        { manufacturer: searchRegex },
+        { model: searchRegex },
+        { serialNumber: searchRegex },
+        { type: searchRegex },
+        { owner: searchRegex },
+        { currentUser: searchRegex }
+      ]
+    }).sort({ addedTime: -1 });
     
     res.json(items);
   } catch (error: any) {
@@ -70,7 +80,7 @@ app.put('/api/inventory/:id', async (req: Request, res: Response) => {
     res.json(updatedItem);
   } catch (error) {
     const err = error as Error;
-    res.status(500).json({ message: err.message });
+    res.status(500).json({ message: err.message || 'Error updating inventory item' });
   }
 });
 
