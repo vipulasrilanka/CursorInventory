@@ -1,0 +1,77 @@
+
+> frontend@0.0.0 dev
+> vite
+
+
+  VITE v6.2.1  ready in 91 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+1:17:10 PM [vite] (client) page reload index.html
+1:17:10 PM [vite] (client) hmr update /src/App.tsx
+1:17:10 PM [vite] (client) page reload coverage/frontend/eslint.config.js.html
+1:17:10 PM [vite] (client) page reload coverage/frontend/index.html
+1:17:10 PM [vite] (client) page reload coverage/frontend/src/App.tsx.html
+1:17:10 PM [vite] (client) page reload coverage/frontend/src/components/AddInventory.tsx.html
+1:17:10 PM [vite] (client) page reload coverage/frontend/src/components/Inventory.tsx.html
+1:17:10 PM [vite] (client) page reload coverage/frontend/src/components/Layout.tsx.html
+1:17:10 PM [vite] (client) page reload coverage/frontend/src/components/SearchInventory.tsx.html
+1:17:10 PM [vite] (client) page reload coverage/frontend/src/components/index.html
+1:17:10 PM [vite] (client) page reload coverage/frontend/src/index.html
+1:17:10 PM [vite] (client) page reload coverage/frontend/src/main.tsx.html
+1:17:10 PM [vite] (client) page reload coverage/frontend/src/theme.ts.html
+1:17:10 PM [vite] (client) page reload coverage/frontend/src/types/Inventory.ts.html
+1:17:10 PM [vite] (client) page reload coverage/frontend/src/types/index.html
+1:17:10 PM [vite] (client) page reload coverage/frontend/src/vite-env.d.ts.html
+1:17:10 PM [vite] (client) page reload coverage/frontend/vite.config.ts.html
+1:17:10 PM [vite] (client) page reload coverage/frontend/vitest.config.ts.html
+1:17:10 PM [vite] (client) page reload coverage/index.html
+1:17:10 PM [vite] (client) hmr update /src/components/AddInventory.tsx
+1:17:10 PM [vite] (client) hmr update /src/components/SearchInventory.tsx
+1:17:10 PM [vite] (client) hmr update /src/App.tsx
+1:17:10 PM [vite] (client) page reload index.html
+1:17:10 PM [vite] (client) hmr update /src/App.tsx
+1:17:38 PM [vite] (client) page reload index.html
+1:17:38 PM [vite] (client) hmr update /src/App.tsx
+1:18:29 PM [vite] (client) page reload coverage/frontend/eslint.config.js.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/index.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/App.tsx.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/components/AddInventory.tsx.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/components/Inventory.tsx.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/components/Layout.tsx.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/components/SearchInventory.tsx.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/components/index.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/index.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/main.tsx.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/theme.ts.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/types/Inventory.ts.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/types/index.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/vite-env.d.ts.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/vite.config.ts.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/vitest.config.ts.html
+1:18:29 PM [vite] (client) page reload coverage/index.html
+1:18:29 PM [vite] (client) page reload index.html
+1:18:29 PM [vite] (client) hmr update /src/App.tsx
+1:18:29 PM [vite] (client) hmr update /src/components/AddInventory.tsx
+1:18:29 PM [vite] (client) hmr update /src/components/SearchInventory.tsx
+1:18:29 PM [vite] (client) page reload src/theme.ts
+1:18:29 PM [vite] (client) page reload coverage/frontend/eslint.config.js.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/index.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/App.tsx.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/components/AddInventory.tsx.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/components/Inventory.tsx.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/components/Layout.tsx.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/components/SearchInventory.tsx.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/components/index.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/index.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/main.tsx.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/theme.ts.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/types/Inventory.ts.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/types/index.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/src/vite-env.d.ts.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/vite.config.ts.html
+1:18:29 PM [vite] (client) page reload coverage/frontend/vitest.config.ts.html
+1:18:29 PM [vite] (client) page reload coverage/index.html
+1:18:29 PM [vite] (client) hmr update /src/components/AddInventory.tsx
+1:18:29 PM [vite] (client) hmr update /src/components/SearchInventory.tsx
+1:18:29 PM [vite] (client) hmr update /src/App.tsx
