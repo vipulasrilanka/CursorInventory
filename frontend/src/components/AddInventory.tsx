@@ -6,6 +6,7 @@ import {
   Grid,
   Paper,
   Typography,
+  Alert,
 } from '@mui/material';
 import axios from 'axios';
 import { InventoryItem } from '../types/Inventory';
@@ -17,6 +18,7 @@ export const AddInventory: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const itemToUpdate = location.state?.item as InventoryItem | undefined;
+  const [error, setError] = useState<string>('');
 
   const [formData, setFormData] = useState<Omit<InventoryItem, '_id' | 'addedTime'>>({
     description: '',
@@ -44,6 +46,7 @@ export const AddInventory: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(''); // Clear any previous errors
     try {
       if (itemToUpdate) {
         await axios.put(`${API_URL}/inventory/${itemToUpdate._id}`, formData);
@@ -61,7 +64,12 @@ export const AddInventory: React.FC = () => {
         currentUser: '',
       });
       navigate('/');
-    } catch (error) {
+    } catch (error: any) {
+      if (error.response?.status === 400) {
+        setError('An item with this serial number already exists. Please use a different serial number.');
+      } else {
+        setError('Error saving inventory item. Please try again.');
+      }
       console.error('Error saving inventory item:', error);
     }
   };
@@ -69,6 +77,10 @@ export const AddInventory: React.FC = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+    // Clear error when serial number is changed
+    if (name === 'serialNumber') {
+      setError('');
+    }
   };
 
   return (
@@ -77,6 +89,11 @@ export const AddInventory: React.FC = () => {
         <Typography variant="h5" gutterBottom>
           {itemToUpdate ? 'Update Inventory Item' : 'Add New Inventory Item'}
         </Typography>
+        {error && (
+          <Alert severity="error" sx={{ mb: 2 }}>
+            {error}
+          </Alert>
+        )}
         <form onSubmit={handleSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>

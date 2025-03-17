@@ -68,19 +68,32 @@ export const SearchInventory: React.FC = () => {
           position: 'relative',
           alignItems: 'center',
           border: '1px solid',
-          borderColor: 'divider',
+          borderColor: 'black',
           borderRadius: 1,
-          p: 1
+          p: 1,
+          backgroundColor: 'white',
+          '&:hover': {
+            borderColor: 'black',
+          },
+          '&:focus-within': {
+            borderColor: 'primary.main',
+          }
         }}>
-          <SearchIcon color="action" />
+          <SearchIcon sx={{ color: 'black' }} />
           <Input
             fullWidth
             disableUnderline
             placeholder="Search by any field..."
             value={searchQuery}
             onChange={handleSearchChange}
+            sx={{
+              color: 'black',
+              '&::placeholder': {
+                color: 'rgba(0, 0, 0, 0.6)',
+              },
+            }}
           />
-          {isLoading && <CircularProgress size={20} />}
+          {isLoading && <CircularProgress size={20} sx={{ color: 'primary.main' }} />}
         </Box>
 
         <Box sx={{ 
